@@ -1,0 +1,38 @@
+.sponsor {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sponsor:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.link,
+.noLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  max-width: 150px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
+}

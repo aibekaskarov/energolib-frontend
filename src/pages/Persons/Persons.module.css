@@ -1,0 +1,160 @@
+.persons {
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 30px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: #8a8a8a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00d9ff, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 217, 255, 0.2);
+  border-color: rgba(0, 217, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s;
+}
+
+.card:hover .image {
+  border-color: #00d9ff;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #00d9ff;
+  color: #0f0f1a;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+  transition: color 0.3s;
+}
+
+.card:hover .name {
+  color: #00d9ff;
+}
+
+.role {
+  font-size: 14px;
+  color: #8a8a8a;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.link {
+  display: inline-block;
+  font-size: 13px;
+  color: #00d9ff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  color: #00b8d9;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  .imageWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+}

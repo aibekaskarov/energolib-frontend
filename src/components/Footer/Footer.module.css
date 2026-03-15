@@ -1,0 +1,85 @@
+.footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+  color: #e0e0e0;
+  padding: 40px 0 20px;
+  margin-top: auto;
+  border-top: 1px solid #2a2a4a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.description {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.links a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: #00d9ff;
+}
+
+.contact {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.bottom {
+  border-top: 1px solid #2a2a4a;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 13px;
+  color: #6a6a8a;
+  margin: 0;
+}

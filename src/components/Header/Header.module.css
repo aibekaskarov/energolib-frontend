@@ -1,0 +1,584 @@
+.header {
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 0 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.5));
+}
+
+.logoText {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #fff 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: #b0b0b0;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #00d9ff;
+  transition: width 0.2s;
+}
+
+.navLink:hover {
+  color: #fff;
+  background: rgba(0, 217, 255, 0.1);
+}
+
+.navLink.active {
+  color: #fff;
+  background: rgba(0, 217, 255, 0.15);
+}
+
+.navLink.active::after {
+  width: 60%;
+}
+
+.searchSection {
+  flex: 1;
+  max-width: 450px;
+  min-width: 200px;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.moreMenu {
+  position: relative;
+}
+
+.moreButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #b0b0b0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.moreButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 217, 255, 0.3);
+  color: #fff;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.moreDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 180px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  z-index: 101;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 10px 16px;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.dropdownLink:hover {
+  background: rgba(0, 217, 255, 0.1);
+  color: #fff;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #b0b0b0;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.profileButton:hover {
+  background: rgba(0, 217, 255, 0.15);
+  border-color: rgba(0, 217, 255, 0.4);
+  color: #00d9ff;
+}
+
+.profileIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.adminButton {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+  color: #0f0f1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.adminButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4);
+}
+
+.loginButton {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+  color: #0f0f1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.loginButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+}
+
+.logoutButton {
+  padding: 10px 20px;
+  background: rgba(255, 80, 80, 0.2);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background: rgba(255, 80, 80, 0.3);
+  border-color: rgba(255, 80, 80, 0.5);
+}
+
+.langButton {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #b0b0b0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.langButton:hover {
+  border-color: #00d9ff;
+  color: #00d9ff;
+}
+
+.burgerButton {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.burgerLine {
+  width: 26px;
+  height: 2px;
+  background: #e0e0e0;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+/* Sidebar Overlay */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlayOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebarOpen {
+  right: 0;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.sidebarLogoIcon {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.5));
+}
+
+.sidebarLogoText {
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #b0b0b0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background: rgba(255, 80, 80, 0.2);
+  border-color: rgba(255, 80, 80, 0.3);
+  color: #ff6b6b;
+}
+
+.closeButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebarSearch {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebarNav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+
+.sidebarSection {
+  margin-bottom: 24px;
+}
+
+.sidebarSectionTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6a6a8a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 24px;
+  margin: 0;
+}
+
+.sidebarNavLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebarNavLink:hover {
+  background: rgba(0, 217, 255, 0.1);
+  color: #fff;
+}
+
+.sidebarNavLink.active {
+  background: rgba(0, 217, 255, 0.15);
+  color: #fff;
+  border-left: 3px solid #00d9ff;
+}
+
+.sidebarLinkIcon {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.sidebarLinkText {
+  flex: 1;
+}
+
+.sidebarLogout {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  background: rgba(255, 80, 80, 0.1);
+  border: none;
+  color: #ff6b6b;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.sidebarLogout:hover {
+  background: rgba(255, 80, 80, 0.2);
+}
+
+.sidebarLogin {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(0, 153, 204, 0.2) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 12px;
+  margin: 0 16px;
+  color: #00d9ff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sidebarLogin:hover {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.3) 0%, rgba(0, 153, 204, 0.3) 100%);
+}
+
+.sidebarFooter {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebarLangButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #b0b0b0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.sidebarLangButton:hover {
+  border-color: #00d9ff;
+  color: #00d9ff;
+  background: rgba(0, 217, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    height: auto;
+    padding: 12px 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .leftSection {
+    order: 1;
+    gap: 20px;
+  }
+
+  .mainNav {
+    display: none;
+  }
+
+  .searchSection {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+  }
+
+  .rightSection {
+    order: 2;
+    gap: 8px;
+  }
+
+  .moreMenu {
+    display: none;
+  }
+
+  .burgerButton {
+    display: flex;
+    order: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 60px;
+    padding: 0 16px;
+    flex-wrap: nowrap;
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .rightSection {
+    display: none;
+  }
+
+  .searchSection {
+    display: none;
+  }
+}

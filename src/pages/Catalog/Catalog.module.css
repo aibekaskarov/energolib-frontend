@@ -1,0 +1,321 @@
+.catalog {
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  font-family: Georgia, serif;
+  background: linear-gradient(90deg, #00d9ff 0%, #ffffff 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #8a8a8a;
+  margin: 0 0 28px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: #8a8a8a;
+}
+
+/* Search bar */
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 18px;
+  color: #6a6a7a;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 14px 18px 14px 48px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  font-size: 15px;
+  color: #c0c0c0;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+  color: #5a5a6a;
+}
+
+.searchInput:focus {
+  border-color: rgba(232, 116, 90, 0.4);
+}
+
+/* Genre buttons */
+.genreRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.genreBtn {
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 13px;
+  color: #a0a0b0;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.genreBtn:hover {
+  background: rgba(0, 217, 255, 0.08);
+  border-color: rgba(0, 217, 255, 0.3);
+  color: #fff;
+}
+
+.genreBtnActive {
+  background: rgba(0, 217, 255, 0.15);
+  border-color: #00d9ff;
+  color: #00d9ff;
+  font-weight: 600;
+}
+
+.resetButton {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: rgba(255, 80, 80, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 50%;
+  color: #ff6b6b;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.resetButton:hover {
+  background: rgba(255, 80, 80, 0.2);
+  border-color: rgba(255, 80, 80, 0.4);
+}
+
+/* Count */
+.count {
+  font-size: 14px;
+  color: #8a8a9a;
+  margin: 0 0 30px;
+}
+
+.countNumber {
+  color: #00d9ff;
+  font-weight: 600;
+}
+
+/* Empty */
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8a8a8a;
+  font-size: 18px;
+}
+
+/* Books grid */
+.booksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.bookCard:hover {
+  background: rgba(0, 217, 255, 0.05);
+  border-color: rgba(0, 217, 255, 0.25);
+}
+
+.bookIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 217, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00d9ff;
+}
+
+.bookIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bookInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.bookTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookAuthor {
+  font-size: 13px;
+  color: #8a8a8a;
+  margin: 0 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookMeta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #9a9aaa;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Infinite scroll */
+.loaderTrigger {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.loadingMore {
+  font-size: 14px;
+  color: #6a6a7a;
+}
+
+.endMessage {
+  font-size: 13px;
+  color: #4a4a5a;
+  margin: 0;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #c0c0c0;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: rgba(0, 217, 255, 0.1);
+  border-color: rgba(0, 217, 255, 0.3);
+  color: #00d9ff;
+}
+
+.pageBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pageBtnActive {
+  background: rgba(0, 217, 255, 0.15);
+  border-color: #00d9ff;
+  color: #00d9ff;
+  font-weight: 600;
+}
+
+.pageDots {
+  color: #5a5a6a;
+  font-size: 14px;
+  padding: 0 4px;
+  user-select: none;
+}
+
+.pageInfo {
+  font-size: 14px;
+  color: #8a8a9a;
+  padding: 0 12px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .filtersRow {
+    flex-direction: column;
+  }
+
+  .booksGrid {
+    gap: 6px;
+  }
+}
