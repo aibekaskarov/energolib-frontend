@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import api from '../../services/api';
+import { getMediaUrl } from '../../services/media';
 import styles from './Book.module.css';
 
 const Book = () => {
@@ -72,9 +73,18 @@ const Book = () => {
 
             {isAuthenticated ? (
               book.fileUrl ? (
-                <button onClick={() => setIsReading(true)} className={styles.readButton}>
-                  {t('book.read')}
-                </button>
+                <div className={styles.bookActions}>
+                  <button onClick={() => setIsReading(true)} className={styles.readButton}>
+                    {t('book.read')}
+                  </button>
+                  <a
+                    href={getMediaUrl(book.fileUrl)}
+                    download
+                    className={styles.downloadButton}
+                  >
+                    Скачать
+                  </a>
+                </div>
               ) : null
             ) : (
               <div className={styles.loginPrompt}>
@@ -99,7 +109,7 @@ const Book = () => {
               <button onClick={() => setIsReading(false)} className={styles.readerClose}>✕</button>
             </div>
             <iframe
-              src={book.fileUrl}
+              src={getMediaUrl(book.fileUrl)}
               width="100%"
               height="100%"
               allowFullScreen

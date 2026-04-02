@@ -43,6 +43,7 @@ const Header = () => {
   ];
 
   const moreNavItems = [
+    { path: '/manual-books', label: 'Книги от админа', icon: <FaBook /> },
     { path: '/persons', label: t('nav.persons'), icon: <FaUser /> },
     { path: '/about', label: t('nav.about'), icon: <FaInfoCircle /> },
     { path: '/feedback', label: t('nav.feedback'), icon: <FaCommentDots /> },

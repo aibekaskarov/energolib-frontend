@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header/Header';
@@ -19,8 +19,17 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import ResetPassword from './pages/Auth/ResetPassword';
 import UserProfile from './pages/UserProfile/UserProfile';
+import ManualBooks from './pages/ManualBooks/ManualBooks';
 
 import './App.css';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
@@ -28,6 +37,7 @@ function App() {
       <AuthProvider>
         <LanguageProvider>
           <div className="app">
+            <ScrollToTop />
             <Header />
             <main className="main-content">
               <Routes>
@@ -39,6 +49,7 @@ function App() {
                 <Route path="/persons/:id" element={<Person />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/news/:id" element={<InfoNews />} />
+                <Route path="/manual-books" element={<ManualBooks />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/feedback" element={<Feedback />} />
 

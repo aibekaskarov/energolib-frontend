@@ -40,7 +40,6 @@
 .logoIcon {
   width: 40px;
   height: 40px;
-  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.5));
 }
 
 .logoText {
@@ -69,6 +68,12 @@
   border-radius: 8px;
   transition: all 0.2s;
   position: relative;
+  outline: none;
+}
+
+.navLink:focus,
+.navLink:focus-visible {
+  outline: none;
 }
 
 .navLink::after {
@@ -85,12 +90,10 @@
 
 .navLink:hover {
   color: #fff;
-  background: rgba(0, 217, 255, 0.1);
 }
 
 .navLink.active {
   color: #fff;
-  background: rgba(0, 217, 255, 0.15);
 }
 
 .navLink.active::after {
