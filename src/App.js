@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header/Header';
@@ -33,6 +34,7 @@ function ScrollToTop() {
 
 function App() {
   return (
+    <GoogleOAuthProvider clientId="230442281962-cqp65fkjcso9e4gl30e5hcu6vi2k2a53.apps.googleusercontent.com">
     <Router>
       <AuthProvider>
         <LanguageProvider>
@@ -75,6 +77,7 @@ function App() {
         </LanguageProvider>
       </AuthProvider>
     </Router>
+    </GoogleOAuthProvider>
   );
 }
 

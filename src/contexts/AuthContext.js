@@ -59,6 +59,24 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const updateProfile = async (fullName) => {
+    const response = await api.put('/users/me', { fullName });
+    const updated = response.data;
+    const newUser = { ...JSON.parse(Cookies.get('user')), fullName: updated.fullName };
+    Cookies.set('user', JSON.stringify(newUser), { expires: 7 });
+    setUser(newUser);
+    return newUser;
+  };
+
+  const loginWithGoogle = async (googleToken) => {
+    const response = await api.post('/auth/google', { token: googleToken });
+    const { token, user: userData } = response.data;
+    Cookies.set('token', token, { expires: 7 });
+    Cookies.set('user', JSON.stringify(userData), { expires: 7 });
+    setUser(userData);
+    return userData;
+  };
+
   const resetPassword = async (email) => {
     await api.post('/auth/reset-password', { email });
   };
@@ -74,6 +92,8 @@ export const AuthProvider = ({ children }) => {
         loading,
         login,
         register,
+        loginWithGoogle,
+        updateProfile,
         logout,
         resetPassword,
         isAuthenticated,

@@ -114,3 +114,9 @@
 .switchLink:hover {
   text-decoration: underline;
 }
+
+.googleWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
