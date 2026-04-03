@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Header.module.css';
 import Search from '../Search/Search';
-import { FaHome, FaBook, FaNewspaper, FaUser, FaInfoCircle, FaCommentDots, FaGlobe, FaSignInAlt, FaSignOutAlt, FaDoorOpen } from 'react-icons/fa';
+import { FaHome, FaBook, FaNewspaper, FaUser, FaInfoCircle, FaCommentDots, FaGlobe, FaSignInAlt, FaDoorOpen } from 'react-icons/fa';
 
 const Header = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -43,7 +43,7 @@ const Header = () => {
   ];
 
   const moreNavItems = [
-    { path: '/manual-books', label: 'Книги от админа', icon: <FaBook /> },
+    { path: '/manual-books', label: 'Книги колледжа', icon: <FaBook /> },
     { path: '/persons', label: t('nav.persons'), icon: <FaUser /> },
     { path: '/about', label: t('nav.about'), icon: <FaInfoCircle /> },
     { path: '/feedback', label: t('nav.feedback'), icon: <FaCommentDots /> },
